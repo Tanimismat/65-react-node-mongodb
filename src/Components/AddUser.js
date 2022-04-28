@@ -9,6 +9,7 @@ const AddUser = () => {
         const email = event.target.email.value;
         const user = { name, email };
         console.log(user);
+
         //send data to the server
         fetch('http://localhost:5000/user', {
             method: 'POST', // or 'PUT'
@@ -20,6 +21,8 @@ const AddUser = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                alert('user added successfully');
+                event.target.reset()
             })
     }
     return (
